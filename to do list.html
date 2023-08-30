@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>to do list</title>
+<style>
+
+</style>
+</head>
+<body>
+    <div class="main">
+        <h2>To do List</h2>
+        <input type="text" name="toDoList" id="inputField" value="2">
+        <input type="button" value="add" id="add">
+<ul id="list">
+    <li>
+     Bananas
+    </li>
+</ul>
+
+    </div>
+<script>
+    let addBtn = document.getElementById("add");
+    let txtBtn = document.getElementsByTagName("li");
+    addBtn.addEventListener("click", additem);
+    
+    function additem(){
+        let items = document.getElementById("inputField").value;
+        const tag = document.createElement('li');
+        const txt =document.createTextNode(items);
+         tag.appendChild(txt);
+         /* items.appendChild(tag); */
+         document.getElementById("list").appendChild(tag).addEventListener('click',TagBtn);
+
+        document.getElementById("inputField").value="";
+    };
+
+    function TagBtn() {
+        
+       this.style.backgroundColor = "ReD";
+    }
+
+</script>
+</body>
+</html>
